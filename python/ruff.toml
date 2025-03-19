@@ -1,0 +1,145 @@
+# Disable preview features.
+preview = false
+# Automatically exclude files in `.gitignore`.
+respect-gitignore = true
+
+# Automatically apply safe fixes
+fix = true
+show-fixes = false
+
+# Set line-length to 88 to match default for `black`.
+line-length = 88
+indent-width = 4
+
+[format]
+# Use `\n` line ending for all files.
+line-ending = "lf"
+# Disable preview style formatting.
+preview = false
+# Prefer double quotes over single quotes.
+quote-style = "double"
+# Don't collapse lines with trailing comma even if they are below the max line length.
+skip-magic-trailing-comma = false
+# Enable reformatting of code snippets in docstrings.
+docstring-code-format = true
+
+[lint]
+# Disable preview features.
+preview = false
+# Ensure the below rules are added in addition to the default enabled rules.
+extend-select = [
+    "A",
+    "ARG",
+    "ASYNC",
+    "B",
+    "C4",
+    "C90",
+    "D",
+    "DTZ",
+    "E",
+    "F",
+    "FAST",
+    "I",
+    "ICN",
+    "N",
+    "PERF",
+    "PLC",
+    "PLE",
+    "PLW",
+    "PTH",
+    "Q",
+    "RET",
+    "RUF",
+    "S",
+    "SLF",
+    "SLOT",
+    "TID",
+    "TRY",
+    "UP",
+    "W",
+]
+ignore = [
+    "COM812",
+    "COM819",
+    "D100",
+    "D101",
+    "D102",
+    "D103",
+    "D104",
+    "D105",
+    "D106",
+    "D107",
+    "E111",
+    "E114",
+    "E117",
+    "ISC001",
+    "ISC002",
+    "Q000",
+    "Q001",
+    "Q002",
+    "Q003",
+    "RET504",
+    "S101",
+    "W191",
+]
+
+[lint.flake8-implicit-str-concat]
+allow-multiline = true
+
+[lint.flake8-quotes]
+# Avoid escapes in strings.
+avoid-escape = false
+# Double quote docstrings.
+docstring-quotes = "double"
+# Ensure this is the same as `format.quote-style`!
+inline-quotes = "double"
+# `double` required when using Ruff formatter!
+multiline-quotes = "double"
+
+[lint.flake8-tidy-imports]
+# Disallow imports that extend into the parent module or beyond.
+ban-relative-imports = "parents"
+
+[lint.flake8-type-checking]
+# Add quotes around type annotations, if doing so would allow an import to be moved
+# into a type-checking block.
+quote-annotations = true
+
+[lint.flake8-unused-arguments]
+# Ignore unused `*args` and `**kwargs`
+ignore-variadic-names = true
+
+[lint.isort]
+case-sensitive = false
+combine-as-imports = false
+detect-same-package = true
+# Don't force "from" imports to be on a single line.
+force-single-line = false
+# Sort by module instead of sorting "import ZZZ" and "from ZZZ import ZZZ" separately.
+force-sort-within-sections = false
+# "import ZZZ" imports come before "from ZZZ" imports.
+from-first = false
+# Sort alphabetically instead of by length.
+length-sort = false
+# Automatically determine number of lines after imports.
+lines-after-imports = -1
+# Separate imports by section, such as first party and third party imports.
+no-sections = false
+# Additionally order imports by type
+order-by-type = true
+split-on-trailing-comma = true
+
+[lint.pycodestyle]
+ignore-overlong-task-comments = true
+
+[lint.pydocstyle]
+convention = "google"
+# Ignore  missing documentation for `*args` and `**kwargs` parameters
+ignore-var-parameters = true
+
+[lint.pyupgrade]
+# Disable this if Pydantic/FastAPI raises TypeErrors on Python<=3.9!
+keep-runtime-typing = false
+
+[lint.mccabe]
+max-complexity = 10
